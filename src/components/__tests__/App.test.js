@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 
 import App from "../App";
 import CommentBox from "../CommentBox";
@@ -8,7 +8,7 @@ import CommentList from "../CommentList";
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<App />);
+  wrapper = mount(<App />);
 });
 
 it("shows a comment box", () => {
@@ -17,4 +17,8 @@ it("shows a comment box", () => {
 
 it("shows a comment list", () => {
   expect(wrapper.find(CommentList).length).toEqual(1);
+});
+
+afterAll(() => {
+  wrapper.unmount();
 });
