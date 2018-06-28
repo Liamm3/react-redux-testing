@@ -3,31 +3,13 @@ import { connect } from "react-redux";
 
 import * as actions from "../actions/";
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
 export default connect(
-  mapStateToProps,
+  null,
   actions
 )(
   class extends Component {
     state = {
       comment: ""
-    };
-
-    componentDidMount() {
-      this.shouldNavigateAway();
-    }
-
-    componentDidUpdate() {
-      this.shouldNavigateAway();
-    }
-
-    shouldNavigateAway = () => {
-      if (!this.props.auth) {
-        this.props.history.push("/");
-      }
     };
 
     handleInput = event => {
