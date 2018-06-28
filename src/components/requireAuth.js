@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-export default ChildComponent =>{
-  class extends Component {
+export default ChildComponent => {
+  class ComposedComponent extends Component {
     componentDidMount() {
       this.shouldNavigateAway();
     }
@@ -18,7 +18,7 @@ export default ChildComponent =>{
     };
 
     render() {
-      return <ChildComponent />;
+      return <ChildComponent {...this.props} />;
     }
   }
 

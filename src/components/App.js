@@ -6,10 +6,6 @@ import * as actions from "../actions/";
 import CommentBox from "./CommentBox";
 import CommentList from "./CommentList";
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
 class App extends Component {
   renderButton = () => {
     if (this.props.auth) {
@@ -43,6 +39,10 @@ class App extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
 
 export default connect(
   mapStateToProps,
