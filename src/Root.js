@@ -4,6 +4,6 @@ import { Provider } from "react-redux";
 
 import reducers from "./reducers/";
 
-export default ({ children }) => (
-  <Provider store={createStore(reducers, {})}>{children}</Provider>
+export default ({ children, initialState = {} }) => (
+  <Provider store={createStore(reducers, initialState)}>{children}</Provider>
 );
